@@ -1,0 +1,95 @@
+/* Fuentes y variables compartidas por todo el sitio. */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+:root {
+  font-family: 'DM Sans', sans-serif;
+  color: #e9eceb;
+  background: #101313;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  --bg: #101313;
+  --surface: #171b1b;
+  --surface-alt: #1d2321;
+  --text: #e9eceb;
+  --muted: #a0a9a5;
+  --dim: #7d8983;
+  --border: #2b3330;
+  --accent: #b4ed87;
+  --mono: 'IBM Plex Mono', monospace;
+  --heading: 'Space Grotesk', sans-serif;
+  color-scheme: dark;
+}
+/* El tema claro modifica las variables sin duplicar los estilos de componentes. */
+:root[data-theme='light'] {
+  --bg: #f6f8f3;
+  --surface: #fff;
+  --surface-alt: #e9eee5;
+  --text: #1e2921;
+  --muted: #58665e;
+  --dim: #647468;
+  --border: #d4ddd1;
+  --accent: #457523;
+  color: var(--text);
+  background: var(--bg);
+  color-scheme: light;
+}
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}
+body {
+  margin: 0;
+  min-width: 320px;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+button {
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+button {
+  background: none;
+  border: 0;
+}
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 5px;
+}
+::selection {
+  background: #b4ed87;
+  color: #152014;
+}
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+svg {
+  flex-shrink: 0;
+}
+button {
+  touch-action: manipulation;
+} /* Respeta la preferencia de reducir animaciones del sistema. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}

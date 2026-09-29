@@ -1,0 +1,6 @@
+node_modules/
+dist/
+tmp/
+public/
+github-profile/
+package-lock.json
